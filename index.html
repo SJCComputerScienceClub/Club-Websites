@@ -1,169 +1,91 @@
-<!DOCTYPE HTML>
-<!--
-	Multiverse by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>SJC Club Database</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script defer src="https://umami.sjccomputerscience.org/script.js" data-website-id="f048e461-5751-4af5-ae80-6f8a7563847e"></script>
-	</head>
-	<body class="is-preload">
+<head>
+<title>SJC Clubs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!-- Navbar (sit on top) -->
+<!--<div class="w3-top">-->
+  <div class="topBar1"><!--w3-bar w3-white w3-wide w3-padding w3-card-->
+    <a href="index.html" class="w3-bar-item w3-button">SJC Club Database</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">Clubs</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+    </div>
+  </div>
+<!--</div>-->
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html"><strong>SJC</strong> All Clubs</a></h1>
-						<nav>
-							<ul>
-								<li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
-							</ul>
-						</nav>
-					</header>
+<!-- Header -->
 
-				<!-- Main -->
-					<div id="main">
-						<article class="thumb">
-							<a href="https://yarn.sjcclubs.org/"><img src="Images/yarn-needle.jpg" alt="" /></a>
-							<h2>Yarn Club</h2>
-							<p>Club is run by Eliza Butler and Liz Delaune. yarn.sjcclubs.org</p>
-						</article>
+<div class="main-img-section" id="home">
+  <h1><b>SJC Clubs<b></h1>
+</div>
+<!-- Page content -->
+<div class="thumbnail-section">
 
-						<div class="w3-row-padding">
-    							<a href="articleViewer.html" onclick="changeArticle('Spring 2019', 'https://express.adobe.com/page/MDLipHiaRYvT6/')">
-    								<div class="w3-col l3 m6 w3-margin-bottom">
-     	 								<div class="w3-display-container">
-        								<div class="hvr-overlay">
-            								<div class="overlay-text">Spring 2019</div>
-        							</div>
-        							<div class="w3-display-topleft past-pub-button w3-padding">Spring 2019</div>
-       									<img src="Images/yarn-needle.jpg" alt="2019" class="thumbnail"> 
-      								</div>
-      							</a>
-    						</div>
-						<!--
-						<article class="thumb">
-							<a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt="" /></a>
-							<h2>Nisl adipiscing</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt="" /></a>
-							<h2>Tempus aliquam veroeros</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt="" /></a>
-							<h2>Aliquam ipsum sed dolore</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt="" /></a>
-							<h2>Cursis aliquam nisl</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt="" /></a>
-							<h2>Sed consequat phasellus</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt="" /></a>
-							<h2>Mauris id tellus arcu</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt="" /></a>
-							<h2>Nunc vehicula id nulla</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt="" /></a>
-							<h2>Neque et faucibus viverra</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="images/fulls/10.jpg" class="image"><img src="images/thumbs/10.jpg" alt="" /></a>
-							<h2>Mattis ante fermentum</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="images/fulls/11.jpg" class="image"><img src="images/thumbs/11.jpg" alt="" /></a>
-							<h2>Sed ac elementum arcu</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						<article class="thumb">
-							<a href="images/fulls/12.jpg" class="image"><img src="images/thumbs/12.jpg" alt="" /></a>
-							<h2>Vehicula id nulla dignissim</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-						</article>
-						-->
-					</div>
+  <!-- Project Section -->
+  <div id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Published Club Websites</h3>
+  </div>
 
-				<!-- Footer -->
-					<footer id="footer" class="panel">
-						<div class="inner split">
-							<div>
-								<section>
-									<h2>Magna feugiat sed adipiscing</h2>
-									<p>Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum.</p>
-								</section>
-								<section>
-									<h2>Follow me on ...</h2>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-									</ul>
-								</section>
-								<p class="copyright">
-									&copy; Unttled. Design: <a href="http://html5up.net">HTML5 UP</a>.
-								</p>
-							</div>
-							<div>
-								<section>
-									<h2>Get in touch</h2>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<input type="text" name="name" id="name" placeholder="Name" />
-											</div>
-											<div class="field half">
-												<input type="text" name="email" id="email" placeholder="Email" />
-											</div>
-											<div class="field">
-												<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-							</div>
-						</div>
-					</footer>
+  <div class="w3-row-padding">
+    <a href="https://yarn.sjcclubs.org/" target="_Blank">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="hvr-overlay">
+            <div class="overlay-text">Yarn Club</div>
+        </div>
+        <div class="w3-display-topleft past-pub-button w3-padding">Yarn Club</div>
+       <img src="images/yarn-needle.jpg" alt="Yarn Club" class="thumbnail"> 
+      </div>
+      </a>
+    </div>
+  <!--Club Card Template-->
+  <!--
+    <div class="w3-col l3 m6 w3-margin-bottom">
+     <a href="Website Link" target="_Blank">
+      <div class="w3-display-container">
+        <div class="hvr-overlay">
+            <div class="overlay-text">Club Name</div>
+        </div>
+        <div class="w3-display-topleft past-pub-button w3-padding">Club Name</div>
+        <img src="Club Image" alt="Club Name" class="thumbnail">
+      </div>
+      </a>
+    </div>
+-->
+    
+    </div>
 
-			</div>
+  </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  <!-- About Section -->
+  <div class="about-section" id="about">
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <p class="about-text">Website created to direct users to the websites of clubs tha have been created at SJC. If you are expecting a website and it doesn't appear on this site, it more than likely means the site hasn't been created or is in the process of doing so.</p>
+  </div>
+  </div>
 
-	</body>
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-black w3-padding-16">
+  <ul class="footerList">
+    <a href="#home" class="footerListText"><li >Home</li></a>
+    <a href="#projects" class="footerListText"><li>Clubs</li></a>
+    <a href="#about" class="footerListText"><li>About</li></a>
+  </ul>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
