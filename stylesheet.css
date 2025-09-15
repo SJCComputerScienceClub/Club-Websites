@@ -360,7 +360,7 @@ p{
 }
 
 .main-img-section{
-  width: 100%;
+  width: 75%; /* changed */
 }
 
 .main-img-section{
@@ -373,7 +373,7 @@ p{
   font-size: 50vw;
   font-weight: 900;
   color: white;
-  height: 95vh;
+  height: 40vh; /* also changed */
 }
 
 .footerList{
