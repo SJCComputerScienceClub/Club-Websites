@@ -1,205 +1,263 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>SJC Clubs</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/x-icon" href="images/Small Logo.svg">
-  <link rel="stylesheet" href="stylesheet.css">
-  <link rel="manifest" href="manifest.json">
-  <script defer src="https://umami.sjccomputerscience.org/script.js" data-website-id="4bf7f83d-0593-4c00-934f-8f885829de77"></script>
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>St. John's College High School - Clubs</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=DM+Serif+Display&family=EB+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
 
-<!-- Navbar (sit on top) -->
-<!--<div class="w3-top">-->
-  <div class="topBar1"><!--w3-bar w3-white w3-wide w3-padding w3-card-->
-    <a href="index.html" class="w3-bar-item w3-button">SJC Club Database</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#projects" class="w3-bar-item w3-button">Clubs</a>
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-    </div>
-  </div>
-<!--</div>-->
-
-<!-- Header -->
-
-<div class="main-img-section" id="home">
-  <h1><b>SJC Clubs<b></h1>
-</div>
-<!-- Page content -->
-<div class="thumbnail-section">
-
-  <!-- Project Section -->
-  <div id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Published Club Websites</h3>
-  </div>
-
-  <div class="w3-row-padding">
-    <a href="https://yarn.sjcclubs.org/" target="_Blank">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">Yarn Club</div>
-        </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">Yarn Club</div>
-       <img src="images/yarn-needle.jpg" alt="Yarn Club" class="thumbnail"> 
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/" class="header-logo-link">
+          <img
+            src="/images/sjc/biglogo.svg"
+            alt="St. John's College High School"
+            class="header-logo"
+          />
+        </a>
+        <nav class="header-nav">
+          <a href="#clubs" class="nav-link">Clubs</a>
+          <!--
+          <a href="#create" class="nav-link">Start a Club</a>
+          -->
+          <a href="#apply" class="nav-link">Get a Website</a>
+          <a href="#about" class="nav-link">About</a>
+        </nav>
       </div>
-      </a>
-    </div>
-  
-    <div class="w3-col l3 m6 w3-margin-bottom">
-     <a href="https://robotics.sjcclubs.org/" target="_Blank">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">Robotics</div>
-        </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">Robotics</div>
-        <img src="images/robotics.jpg" alt="robotics" class="thumbnail">
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <img
+        src="/images/sjc/tabletennis.jpeg"
+        alt="Students collaborating"
+        class="hero-bg"
+      />
+      <div class="hero-content">
+        <h1 class="hero-title">Explore Our Clubs</h1>
+        <p class="hero-subtitle">Discover community, pursue your passions, and lead with purpose at St. John&rsquo;s.</p>
+        <a href="#clubs" class="hero-cta">Browse Clubs</a>
       </div>
-      </a>
-    </div> 
-  
-    <div class="w3-col l3 m6 w3-margin-bottom">
-     <a href="https://litmag.sjcclubs.org/" target="_Blank">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">Lit Mag</div>
+    </section>
+
+    <!-- ===== CLUB DIRECTORY ===== -->
+    <section id="clubs" class="section clubs-section">
+      <div class="container">
+        <h2 class="section-title">Club Directory</h2>
+        <p class="section-intro">Click any club to visit its website and learn more.</p>
+
+        <div class="club-grid">
+
+          <!-- ========== CLUB CARD TEMPLATE ==========
+          To add a new club:
+            1. Add an image to the /images/ folder
+            2. Copy an entire <a class="club-card"> block below
+            3. Change href="" to the club's website URL (e.g. https://CLUBNAME.sjcclubs.org)
+            4. Update the img src, alt text, club name, and description
+          ========================================== -->
+
+          <a href="https://nhs.sjcclubs.org" class="club-card">
+            <div class="club-card-img-wrap">
+              <img src="/images/national-honor-society.jpg" alt="National Honor Society" class="club-card-img" />
+            </div>
+            <div class="club-card-body">
+              <h3 class="club-card-name">National Honor Society</h3>
+              <p class="club-card-desc">Academic excellence, leadership, service, and character.</p>
+            </div>
+          </a>
+
+          <a href="https://studentcouncil.sjcclubs.org" class="club-card">
+            <div class="club-card-img-wrap">
+              <img src="/images/student-council.jpg" alt="Student Council" class="club-card-img" />
+            </div>
+            <div class="club-card-body">
+              <h3 class="club-card-name">Student Council</h3>
+              <p class="club-card-desc">Student government and campus leadership.</p>
+            </div>
+          </a>
+
+          <a href="https://debate.sjcclubs.org" class="club-card">
+            <div class="club-card-img-wrap">
+              <img src="/images/debate-team.jpg" alt="Debate Team" class="club-card-img" />
+            </div>
+            <div class="club-card-body">
+              <h3 class="club-card-name">Debate Team</h3>
+              <p class="club-card-desc">Competitive argumentation and public speaking.</p>
+            </div>
+          </a>
+
+          <a href="https://robotics.sjcclubs.org" class="club-card">
+            <div class="club-card-img-wrap">
+              <img src="/images/robotics-club.jpg" alt="Robotics Club" class="club-card-img" />
+            </div>
+            <div class="club-card-body">
+              <h3 class="club-card-name">Robotics Club</h3>
+              <p class="club-card-desc">Engineering, coding, and hands-on competition.</p>
+            </div>
+          </a>
+
+          <a href="https://art.sjcclubs.org" class="club-card">
+            <div class="club-card-img-wrap">
+              <img src="/images/art-club.jpg" alt="Art Club" class="club-card-img" />
+            </div>
+            <div class="club-card-body">
+              <h3 class="club-card-name">Art Club</h3>
+              <p class="club-card-desc">Creative expression through visual arts and design.</p>
+            </div>
+          </a>
+
+          <a href="https://service.sjcclubs.org" class="club-card">
+            <div class="club-card-img-wrap">
+              <img src="/images/service-club.jpg" alt="Service Club" class="club-card-img" />
+            </div>
+            <div class="club-card-body">
+              <h3 class="club-card-name">Service Club</h3>
+              <p class="club-card-desc">Community service and Lasallian mission work.</p>
+            </div>
+          </a>
+
+          <!-- END CLUB CARDS — add new clubs above this line -->
+
         </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">Lit Mag</div>
-        <img src="https://litmag.sjcclubs.org/thumbs/2025.avif" alt="Litmag" class="thumbnail">
       </div>
-      </a>
-    </div>
+    </section>
 
-    <div class="w3-col l3 m6 w3-margin-bottom">
-     <a href="https://motorsports.sjcclubs.org/" target="_Blank">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">Motorsports</div>
+    <!-- ===== HOW TO CREATE A CLUB ===== -->
+    <!--
+    <section id="create" class="section create-section">
+      <div class="container">
+        <div class="create-layout">
+          <div class="create-text">
+            <h2 class="section-title">Start a Club</h2>
+            <p class="create-intro">Have an idea for a new club? Here&rsquo;s how to bring it to life at St. John&rsquo;s.</p>
+
+            <ol class="steps-list">
+              <li class="step">
+                <span class="step-number">1</span>
+                <div class="step-content">
+                  <h3 class="step-title">Find a Faculty Moderator</h3>
+                  <p class="step-desc">Every club needs a teacher or staff member willing to supervise meetings and events.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-number">2</span>
+                <div class="step-content">
+                  <h3 class="step-title">Gather Student Interest</h3>
+                  <p class="step-desc">Collect signatures from at least 10 students who want to participate.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-number">3</span>
+                <div class="step-content">
+                  <h3 class="step-title">Write a Club Proposal</h3>
+                  <p class="step-desc">Draft a brief proposal including the club&rsquo;s name, purpose, planned activities, and meeting schedule.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-number">4</span>
+                <div class="step-content">
+                  <h3 class="step-title">Submit to Student Affairs</h3>
+                  <p class="step-desc">Turn in your proposal and signatures to the Office of Student Affairs for review and approval.</p>
+                </div>
+              </li>
+              <li class="step">
+                <span class="step-number">5</span>
+                <div class="step-content">
+                  <h3 class="step-title">Launch Your Club</h3>
+                  <p class="step-desc">Once approved, you&rsquo;ll be added to the club directory and can begin holding meetings.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="create-photo">
+            <img
+              src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_4/v1752684993/stjohnschsorg/tpvmxwhlssk2ggltymtu/Website25423.jpg"
+              alt="Teacher speaks to class"
+              class="create-photo-img"
+            />
+          </div>
         </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">Motorsports</div>
-        <img src="images/2025-motorsports-daytona500-02.avif" alt="Motorsports" class="thumbnail">
       </div>
-      </a>
-    </div>
+    </section>
+    -->
 
-    <div class="w3-col l3 m6 w3-margin-bottom">
-     <a href="https://sia.sjcclubs.org/" target="_Blank">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">SIA</div>
+    <!-- ===== APPLY FOR A WEBSITE ===== -->
+    <section id="apply" class="section apply-section">
+      <div class="container">
+        <div class="apply-layout">
+          <div class="apply-text">
+            <h2 class="section-title">Apply for a Club Website</h2>
+            <p class="apply-intro">
+              Want a website for your club on sjcclubs.org? The SJC Computer Science Department can set one up for you.
+            </p>
+            <a href="mailto:csdept@stjohnschs.org?subject=Club%20Website%20Request" class="apply-cta">
+              Request a Website
+            </a>
+          </div>
+          <div class="apply-details">
+            <h3 class="apply-details-title">What to include in your email:</h3>
+            <ul class="apply-list">
+              <li>Your club name</li>
+              <li>Faculty moderator name</li>
+              <li>Preferred subdomain (e.g. <strong>myclub.sjcclubs.org</strong>)</li>
+              <li>Names of club members who will manage the site</li>
+            </ul>
+          </div>
         </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">Student Identity Alliance</div>
-        <img src="images/lgbtq.jpg" alt="SIA" class="thumbnail">
       </div>
-      </a>
-    </div>
+    </section>
 
-    <div class="w3-col l3 m6 w3-margin-bottom">
-     <a href="https://book.sjcclubs.org/" target="_Blank">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">Book Club</div>
-        </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">Book Club</div>
-        <img src="images/book.jpg" alt="Book Club" class="thumbnail">
+    <!-- ===== ABOUT / SPIRIT ===== -->
+    <section id="about" class="section about-section">
+      <div class="hero-overlay about-overlay"></div>
+      <img
+        src="/images/sjc/flag.jpeg"
+        alt="SJC student spirit"
+        class="about-bg"
+      />
+      <div class="about-content container">
+        <img
+          src="/images/sjc/badge.svg"
+          alt="SJC Crest"
+          class="about-crest"
+        />
+        <h2 class="section-title about-title">Lasallian Community</h2>
+        <p class="about-text">
+          At St. John&rsquo;s, clubs are more than extracurriculars. They&rsquo;re where friendships form,
+          leaders emerge, and our Lasallian values of service and community come alive.
+        </p>
       </div>
-      </a>
-    </div>
+    </section>
 
-    <div class="w3-col l3 m6 w3-margin-bottom">
-     <a href="https://itsacademic.sjcclubs.org/" target="_Blank">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">It's Academic</div>
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img
+            src="https://resources.finalsite.net/images/v1753906703/stjohnschsorg/vgpaa42pmd9ccrxo0dyj/stjohnschsorg-logo-header.svg"
+            alt="St. John's College High School"
+            class="footer-logo"
+          />
+          <p class="footer-tagline">Faith &bull; Service &bull; Community</p>
         </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">It's Academic</div>
-        <img src="images/itsacademic.jpg" alt="It's Academic" class="thumbnail">
+        <div class="footer-links">
+          <a href="https://www.stjohnschs.org" class="footer-link">SJC Website</a>
+          <a href="#clubs" class="footer-link">Clubs</a>
+          <a href="#create" class="footer-link">Start a Club</a>
+          <a href="#apply" class="footer-link">Get a Website</a>
         </div>
-      </a>
-    </div>
-
-    <div class="w3-col l3 m6 w3-margin-bottom">
-     <a href="https://modelun.sjcclubs.org/" target="_Blank">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">Model UN</div>
-        </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">Model UN</div>
-        <img src="images/modelun.jpg" alt="Model UN" class="thumbnail">
-        </div>
-      </a>
-    </div>
-
-    <div class="w3-col l3 m6 w3-margin-bottom">
-     <a href="https://film.sjcclubs.org/" target="_Blank">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">Film Club</div>
-        </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">Film Club</div>
-        <img src="images/film.jpg" alt="Film Club" class="thumbnail">
-        </div>
-      </a>
-    </div>
-
-    <div class="w3-col l3 m6 w3-margin-bottom">
-     <a href="https://chess.sjcclubs.org/" target="_Blank">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">Chess Club</div>
-        </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">Chess Club</div>
-        <img src="images/chess.jpg" alt="Chess Club" class="thumbnail">
-        </div>
-      </a>
-    </div>
-
-
-
-  
-  <!--Club Card Template-->
-  <!--
-    <div class="w3-col l3 m6 w3-margin-bottom">
-     <a href="Website Link" target="_Blank">
-      <div class="w3-display-container">
-        <div class="hvr-overlay">
-            <div class="overlay-text">Club Name</div>
-        </div>
-        <div class="w3-display-topleft past-pub-button w3-padding">Club Name</div>
-        <img src="Club Image" alt="Club Name" class="thumbnail">
+        <p class="footer-copy">&copy; 2026 St. John&rsquo;s College High School. All rights reserved.</p>
       </div>
-      </a>
-    </div>
--->
-    
-    </div>
+    </footer>
 
-  </div>
-
-  <!-- About Section -->
-  <div class="about-section" id="about">
-  <div class="w3-container w3-padding-32" id="about">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-    <p class="about-text">Website created to direct users to the websites of clubs that have been created at SJC. If you are expecting a website and it doesn't appear on this site, it more than likely means the site hasn't been created or is in the process of doing so.</p>
-  </div>
-  </div>
-
-<!-- End page content -->
-</div>
-
-
-<!-- Footer -->
-<footer class="w3-black w3-padding-16">
-  <ul class="footerList">
-    <a href="#home" class="footerListText"><li >Home</li></a>
-    <a href="#projects" class="footerListText"><li>Clubs</li></a>
-    <a href="#about" class="footerListText"><li>About</li></a>
-  </ul>
-</footer>
-
-<script src="script.js"></script>
-</body>
+  </body>
 </html>

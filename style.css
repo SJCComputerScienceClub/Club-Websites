@@ -1,0 +1,601 @@
+/* ==============================================
+   ST. JOHN'S COLLEGE HIGH SCHOOL — CLUBS SITE
+   Brand Kit Colors & Typography
+   ============================================== */
+
+/* --- CSS Custom Properties (Brand Kit) --- */
+:root {
+  --color-primary: #cc0033;
+  --color-accent-1: #e2708c;
+  --color-accent-2: #1173b2;
+  --color-background: #fdfdfd;
+  --color-text: #5b6670;
+  --color-neutral: #525252;
+
+  --font-h1: "Barlow Semi Condensed", sans-serif;
+  --font-h2: "EB Garamond", serif;
+  --font-body: "DM Serif Display", serif;
+
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 1rem;      /* 16px */
+  --spacing-md: 1.5rem;    /* 24px */
+  --spacing-lg: 2rem;      /* 32px */
+  --spacing-xl: 3rem;      /* 48px */
+  --spacing-2xl: 4rem;     /* 64px */
+
+  --max-width: 1200px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 6px 24px rgba(0, 0, 0, 0.12);
+  --transition: 0.25s ease;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+  min-width: 320px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-2xl) 0;
+}
+
+/* --- Section Titles --- */
+.section-title {
+  font-family: var(--font-h2);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+/* ==============================================
+   HEADER
+   ============================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-background);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  height: 48px;
+  width: auto;
+}
+
+.header-nav {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.nav-link {
+  font-family: var(--font-h1);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--color-accent-1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  background-color: var(--color-accent-1);
+}
+
+/* ==============================================
+   HERO
+   ============================================== */
+.hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(204, 0, 51, 0.85) 0%,
+    rgba(17, 115, 178, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  max-width: 700px;
+}
+
+.hero-title {
+  font-family: var(--font-h1);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero-cta {
+  display: inline-block;
+  font-family: var(--font-h1);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background-color: #fff;
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border-radius: var(--radius);
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.hero-cta:hover {
+  background-color: var(--color-background);
+  transform: translateY(-2px);
+}
+
+/* ==============================================
+   CLUB DIRECTORY
+   ============================================== */
+.clubs-section {
+  background-color: var(--color-background);
+}
+
+.section-intro {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-neutral);
+  margin-bottom: var(--spacing-xl);
+}
+
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* --- Club Card --- */
+.club-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.club-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.club-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #eee;
+}
+
+.club-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.club-card:hover .club-card-img {
+  transform: scale(1.05);
+}
+
+.club-card-body {
+  padding: var(--spacing-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.club-card-name {
+  font-family: var(--font-h2);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.club-card-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-neutral);
+  line-height: 1.5;
+}
+
+/* ==============================================
+   START A CLUB
+   ============================================== */
+.create-section {
+  background-color: #f4f5f7;
+}
+
+.create-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+}
+
+.create-intro {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-neutral);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* --- Steps --- */
+.steps-list {
+  list-style: none;
+  counter-reset: none;
+}
+
+.step {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-h1);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 50%;
+}
+
+.step-title {
+  font-family: var(--font-h2);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-neutral);
+  margin-bottom: 2px;
+}
+
+.step-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.create-photo-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+
+/* ==============================================
+   APPLY FOR A WEBSITE
+   ============================================== */
+.apply-section {
+  background-color: var(--color-background);
+}
+
+.apply-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+}
+
+.apply-intro {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-neutral);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.apply-cta {
+  display: inline-block;
+  font-family: var(--font-h1);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--color-primary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius);
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.apply-cta:hover {
+  background-color: #a8002a;
+  transform: translateY(-2px);
+}
+
+.apply-details-title {
+  font-family: var(--font-h2);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-neutral);
+  margin-bottom: var(--spacing-sm);
+}
+
+.apply-list {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 2;
+  padding-left: var(--spacing-md);
+}
+
+.apply-list li::marker {
+  color: var(--color-primary);
+}
+
+/* ==============================================
+   ABOUT / SPIRIT SECTION
+   ============================================== */
+.about-section {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.about-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(204, 0, 51, 0.88) 0%,
+    rgba(82, 82, 82, 0.82) 100%
+  );
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  max-width: 700px;
+}
+
+.about-crest {
+  height: 80px;
+  width: auto;
+  margin: 0 auto var(--spacing-md);
+}
+
+.about-title {
+  color: #fff;
+  margin-bottom: var(--spacing-md);
+}
+
+.about-text {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
+}
+
+/* ==============================================
+   FOOTER
+   ============================================== */
+.site-footer {
+  background-color: var(--color-neutral);
+  color: rgba(255, 255, 255, 0.8);
+  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+}
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.footer-link {
+  font-family: var(--font-h1);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color var(--transition);
+}
+
+.footer-link:hover {
+  color: var(--color-accent-1);
+}
+
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==============================================
+   RESPONSIVE
+   ============================================== */
+@media (max-width: 900px) {
+  .create-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .apply-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .create-photo {
+    order: -1;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-nav {
+    gap: var(--spacing-md);
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+  }
+
+  .header-logo {
+    height: 36px;
+  }
+
+  .hero {
+    min-height: 380px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .club-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}
