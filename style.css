@@ -598,196 +598,183 @@ a {
     height: 32px;
     font-size: 0.9rem;
   }
-/* ===== REMINDERS SECTION ===== */
+/* =========================================================
+   CLUB CALENDAR + LEADER REMINDERS
+   ========================================================= */
 
-.reminders-section {
-  background: #f5f2ed;
-}
-
-.reminders-layout {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 2rem;
-  align-items: stretch;
-  margin-top: 2.5rem;
-
-  /* Keeps the entire section compact */
+.reminders-section .reminders-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.9fr) !important;
+  gap: 24px;
   height: 720px;
+  margin-top: 30px;
+  align-items: stretch;
 }
 
-/* ===== CALENDAR ===== */
-
-.calendar-card {
-  background: #ffffff;
+/* Both panels occupy the same height */
+.reminders-section .calendar-panel,
+.reminders-section .reminders-panel {
+  background: #fff;
   border-radius: 18px;
-  padding: 2rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
 
+/* LEFT PANEL */
+
+.reminders-section .calendar-panel {
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  padding: 24px;
 }
 
-.reminders-card-header {
-  flex-shrink: 0;
-  margin-bottom: 1.5rem;
+.reminders-section .panel-header {
+  flex: 0 0 auto;
+  margin-bottom: 18px;
 }
 
-.reminders-card-header h3 {
-  margin: 0 0 0.4rem;
+.reminders-section .panel-header h3 {
+  margin: 0 0 5px;
   font-family: "DM Serif Display", serif;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 
-.reminders-card-header p {
+.reminders-section .panel-header p {
   margin: 0;
   color: #666;
 }
 
-.calendar-container {
-  flex: 1;
+.reminders-section .calendar-display {
+  flex: 1 1 auto;
   min-height: 0;
   overflow: hidden;
   border-radius: 12px;
-  background: #f8f8f8;
-
+  background: #f7f7f7;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.club-calendar {
+.reminders-section .calendar-display img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* ===== LEADER REMINDERS ===== */
+/* RIGHT PANEL */
 
-.leader-reminders-card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 2rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-
+.reminders-section .reminders-panel {
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  padding: 24px;
 }
 
-/* Only the reminder list scrolls */
-.reminder-list {
-  flex: 1;
+/*
+ * THIS is the important part:
+ * only the reminder list scrolls.
+ */
+.reminders-section .reminders-scroll {
+  flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
-  padding-right: 0.75rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  padding-right: 12px;
 }
 
-/* Custom scrollbar */
+/* Scrollbar */
 
-.reminder-list::-webkit-scrollbar {
-  width: 8px;
+.reminders-section .reminders-scroll::-webkit-scrollbar {
+  width: 7px;
 }
 
-.reminder-list::-webkit-scrollbar-track {
+.reminders-section .reminders-scroll::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
 }
 
-.reminder-list::-webkit-scrollbar-thumb {
-  background: #c7c7c7;
+.reminders-section .reminders-scroll::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
   border-radius: 10px;
 }
 
-.reminder-list::-webkit-scrollbar-thumb:hover {
+.reminders-section .reminders-scroll::-webkit-scrollbar-thumb:hover {
   background: #999;
 }
 
-/* Individual reminder */
+/* Individual reminders */
 
-.reminder-item {
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 1.25rem;
+.reminders-section .leader-reminder {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 12px;
+  padding: 0 0 18px;
+  margin: 0 0 18px;
   border-bottom: 1px solid #e5e5e5;
 }
 
-.reminder-item:last-child {
+.reminders-section .leader-reminder:last-child {
   border-bottom: none;
-}
-
-.reminder-icon {
-  flex: 0 0 42px;
-  width: 42px;
-  height: 42px;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #eee;
-
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-.reminder-item h4 {
-  margin: 0 0 0.4rem;
-
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-size: 1.15rem;
-}
-
-.reminder-item p {
-  margin: 0 0 0.6rem;
-
-  color: #666;
-  line-height: 1.5;
-}
-
-.reminder-item p:last-child {
   margin-bottom: 0;
 }
 
-.reminder-link {
-  display: inline-block;
-  margin-top: 0.5rem;
+.reminders-section .reminder-number {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
 
+.reminders-section .leader-reminder h4 {
+  margin: 0 0 6px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.1rem;
+}
+
+.reminders-section .leader-reminder p {
+  margin: 0 0 8px;
+  color: #666;
+  line-height: 1.45;
+}
+
+.reminders-section .leader-reminder p:last-child {
+  margin-bottom: 0;
+}
+
+.reminders-section .leader-reminder a {
+  display: inline-block;
+  margin-top: 5px;
   font-weight: 700;
   text-decoration: none;
 }
 
-.reminder-link:hover {
+.reminders-section .leader-reminder a:hover {
   text-decoration: underline;
 }
 
-/* ===== MOBILE ===== */
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
 
 @media (max-width: 900px) {
 
-  .reminders-layout {
-    grid-template-columns: 1fr;
+  .reminders-section .reminders-grid {
+    grid-template-columns: 1fr !important;
     height: auto;
   }
 
-  .calendar-card {
-    min-height: 500px;
+  .reminders-section .calendar-panel {
+    height: 600px;
   }
 
-  .leader-reminders-card {
-    max-height: 700px;
+  .reminders-section .reminders-panel {
+    height: 650px;
   }
-
-  .reminder-list {
-    overflow-y: visible;
-  }
-}
 }
