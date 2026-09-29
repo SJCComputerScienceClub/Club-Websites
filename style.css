@@ -598,4 +598,70 @@ a {
     height: 32px;
     font-size: 0.9rem;
   }
+   /* ===== CLUB LEADER REMINDERS ===== */
+
+.leader-reminders-card {
+  max-height: 850px;
+  overflow-y: auto;
+}
+
+.leader-reminders-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.leader-reminders-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.leader-reminders-card::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.reminder-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0 0 1.4rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.reminder-item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.reminder-item h4 {
+  margin: 0 0 0.45rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.15rem;
+}
+
+.reminder-item p {
+  margin: 0 0 0.65rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.reminder-item p:last-child {
+  margin-bottom: 0;
+}
+
+.reminder-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.reminder-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .leader-reminders-card {
+    max-height: none;
+    overflow-y: visible;
+  }
+}
 }
