@@ -216,12 +216,12 @@
         </div>
 
         <div class="calendar-display">
-          <div class="calendar-clickable">
+         
   <img
     src="/images/octoberchedule.png"
     alt="SJC Club Calendar"
   />
-</div>
+
         </div>
 
       </div>
@@ -543,48 +543,6 @@
         <p class="footer-copy">&copy; 2026 St. John&rsquo;s College High School. All rights reserved.</p>
       </div>
     </footer>
-<!-- ===== CALENDAR LIGHTBOX ===== -->
 
-<div class="calendar-lightbox" id="calendarLightbox">
-
-  <span class="calendar-lightbox-close" id="calendarLightboxClose">
-    &times;
-  </span>
-
-  <img
-    src="/images/octoberchedule.png"
-    alt="SJC Club Calendar - Enlarged"
-  />
-
-</div>
-    <script>
-  const calendarImage = document.querySelector(".calendar-clickable img");
-  const lightbox = document.getElementById("calendarLightbox");
-  const closeButton = document.getElementById("calendarLightboxClose");
-
-  // Open calendar
-  calendarImage.addEventListener("click", function () {
-    lightbox.classList.add("active");
-  });
-
-  // Close with X
-  closeButton.addEventListener("click", function () {
-    lightbox.classList.remove("active");
-  });
-
-  // Close by clicking the dark background
-  lightbox.addEventListener("click", function (event) {
-    if (event.target === lightbox) {
-      lightbox.classList.remove("active");
-    }
-  });
-
-  // Close with Escape key
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      lightbox.classList.remove("active");
-    }
-  });
-</script>
   </body>
 </html>
