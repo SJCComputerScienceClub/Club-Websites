@@ -542,6 +542,7 @@ a {
 /* ==============================================
    RESPONSIVE
    ============================================== */
+
 @media (max-width: 900px) {
   .create-layout {
     grid-template-columns: 1fr;
@@ -598,39 +599,51 @@ a {
     height: 32px;
     font-size: 0.9rem;
   }
+}
+
+
 /* =========================================================
    CLUB CALENDAR + LEADER REMINDERS
    ========================================================= */
 
 .reminders-section .reminders-grid {
   display: grid !important;
-  grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.9fr) !important;
-  gap: 24px;
-  height: 720px;
-  margin-top: 30px;
-  align-items: stretch;
+  grid-template-columns: minmax(0, 3fr) minmax(360px, 2fr) !important;
+  grid-template-rows: 720px !important;
+  gap: 24px !important;
+  width: 100% !important;
+  height: 720px !important;
+  margin-top: 30px !important;
 }
 
-/* Both panels occupy the same height */
+
+/* BOTH PANELS */
+
 .reminders-section .calendar-panel,
 .reminders-section .reminders-panel {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: 720px !important;
+
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  min-width: 0;
-  min-height: 0;
-  overflow: hidden;
+
+  overflow: hidden !important;
 }
 
-/* LEFT PANEL */
+
+/* =========================================================
+   LEFT — CALENDAR
+   ========================================================= */
 
 .reminders-section .calendar-panel {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
   padding: 24px;
 }
 
-.reminders-section .panel-header {
+.reminders-section .calendar-panel .panel-header {
   flex: 0 0 auto;
   margin-bottom: 18px;
 }
@@ -647,70 +660,67 @@ a {
 }
 
 .reminders-section .calendar-display {
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow: hidden;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
   border-radius: 12px;
   background: #f7f7f7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .reminders-section .calendar-display img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
 }
 
-/* RIGHT PANEL */
+
+/* =========================================================
+   RIGHT — REMINDERS
+   ========================================================= */
 
 .reminders-section .reminders-panel {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
   padding: 24px;
 }
 
-/*
- * THIS is the important part:
- * only the reminder list scrolls.
- */
+.reminders-section .reminders-panel .panel-header {
+  flex: 0 0 auto;
+  margin-bottom: 18px;
+}
+
+
+/* THIS IS THE SCROLLING AREA */
+
 .reminders-section .reminders-scroll {
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow-y: auto;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
   padding-right: 12px;
 }
 
-/* Scrollbar */
 
-.reminders-section .reminders-scroll::-webkit-scrollbar {
-  width: 7px;
-}
-
-.reminders-section .reminders-scroll::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.reminders-section .reminders-scroll::-webkit-scrollbar-thumb {
-  background: #c5c5c5;
-  border-radius: 10px;
-}
-
-.reminders-section .reminders-scroll::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
-
-/* Individual reminders */
+/* =========================================================
+   REMINDER ITEMS
+   ========================================================= */
 
 .reminders-section .leader-reminder {
   display: grid;
   grid-template-columns: 38px minmax(0, 1fr);
   gap: 12px;
+
   padding: 0 0 18px;
   margin: 0 0 18px;
+
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -722,11 +732,14 @@ a {
 .reminders-section .reminder-number {
   width: 38px;
   height: 38px;
-  border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  border-radius: 50%;
   background: #eee;
+
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
@@ -734,6 +747,7 @@ a {
 
 .reminders-section .leader-reminder h4 {
   margin: 0 0 6px;
+
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 1.1rem;
 }
@@ -751,6 +765,7 @@ a {
 .reminders-section .leader-reminder a {
   display: inline-block;
   margin-top: 5px;
+
   font-weight: 700;
   text-decoration: none;
 }
@@ -759,154 +774,32 @@ a {
   text-decoration: underline;
 }
 
-/* =========================================================
-   TABLET / MOBILE
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-  .reminders-section .reminders-grid {
-    grid-template-columns: 1fr !important;
-    height: auto;
-  }
-
-  .reminders-section .calendar-panel {
-    height: 600px;
-  }
-
-  .reminders-section .reminders-panel {
-    height: 650px;
-  }
-   /* =========================================================
-   CLUB REMINDERS - FORCE TWO COLUMN LAYOUT
-   ========================================================= */
-
-#reminders .reminders-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 3fr) minmax(360px, 2fr);
-    grid-template-rows: 720px !important;
-    gap: 24px !important;
-    width: 100% !important;
-    height: 720px !important;
-    margin: 30px 0 0 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-}
-
-/* LEFT SIDE - CALENDAR */
-
-#reminders .calendar-panel {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-
-    width: 100% !important;
-    height: 720px !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 24px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-/* RIGHT SIDE - REMINDERS */
-
-#reminders .reminders-panel {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-
-    width: 100% !important;
-    height: 720px !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 24px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-/* Calendar image area */
-
-#reminders .calendar-display {
-    flex: 1 !important;
-    min-height: 0 !important;
-    overflow: hidden !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    border-radius: 12px;
-}
-
-#reminders .calendar-display img {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-}
-
-/* Scroll ONLY the reminders */
-
-#reminders .reminders-scroll {
-    flex: 1 !important;
-    min-height: 0 !important;
-
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-
-    padding-right: 12px;
-}
-
-/* Scrollbar */
-
-#reminders .reminders-scroll::-webkit-scrollbar {
-    width: 8px;
-}
-
-#reminders .reminders-scroll::-webkit-scrollbar-track {
-    background: #eeeeee;
-    border-radius: 10px;
-}
-
-#reminders .reminders-scroll::-webkit-scrollbar-thumb {
-    background: #bbbbbb;
-    border-radius: 10px;
-}
 
 /* =========================================================
-   MOBILE
+   MOBILE — STACK THE PANELS
    ========================================================= */
 
 @media (max-width: 800px) {
 
-    #reminders .reminders-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        grid-template-rows: auto auto !important;
-        height: auto !important;
-    }
+  .reminders-section .reminders-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
 
-    #reminders .calendar-panel {
-        grid-column: 1 !important;
-        grid-row: 1 !important;
-        height: 550px !important;
-    }
+    height: auto !important;
+  }
 
-    #reminders .reminders-panel {
-        grid-column: 1 !important;
-        grid-row: 2 !important;
-        height: 650px !important;
-    }
-}
+  .reminders-section .calendar-panel {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    height: 550px !important;
+  }
+
+  .reminders-section .reminders-panel {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+
+    height: 650px !important;
+  }
 }
