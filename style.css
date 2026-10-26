@@ -1101,3 +1101,33 @@ a {
   }
 }
 
+.club-website-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.club-website-button:hover {
+  background: #a8002a;
+  transform: translateY(-2px);
+}
+
+.club-website-button:focus-visible {
+  outline: 3px solid var(--color-accent-2);
+  outline-offset: 3px;
+}
+
+.club-website-button[hidden] {
+  display: none !important;
+}
+
+
