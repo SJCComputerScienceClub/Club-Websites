@@ -121,6 +121,31 @@ document.addEventListener("DOMContentLoaded", () => {
       paragraph.textContent = value;
       section.hidden = !value;
     });
+    
+    const websiteButton = document.getElementById("modal-club-website");
+    const website = (card.dataset.website || "").trim();
+    
+    let validWebsite = "";
+    
+    try {
+      const parsedURL = new URL(website);
+    
+      if (
+        ["https:", "http:"].includes(parsedURL.protocol) &&
+        parsedURL.hostname.includes(".")
+      ) {
+        validWebsite = parsedURL.href;
+      }
+    } catch {
+      // No valid website supplied.
+    }
+    
+    websiteButton.hidden = !validWebsite;
+    
+    if (validWebsite) {
+      websiteButton.href = validWebsite;
+    }
+
 
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
