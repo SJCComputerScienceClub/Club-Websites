@@ -1,5 +1,4 @@
 
-<script>
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".club-grid");
   const previousButton = document.getElementById("clubs-prev");
@@ -8,8 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!grid || !previousButton || !nextButton || !pageStatus) return;
 
-  const cards = Array.from(grid.querySelectorAll(".club-card"));
-  const pageSize = 9;
+  const cards = Array.from(grid.querySelectorAll(".club-card"))
+  .sort((a, b) => {
+    const nameA = a.querySelector("h2, h3, h4")?.textContent.trim() || "";
+    const nameB = b.querySelector("h2, h3, h4")?.textContent.trim() || "";
+
+    return nameA.localeCompare(nameB, "en", {
+      sensitivity: "base",
+      numeric: true
+    });
+  });
+
+const pageSize = 9;
+
+// Reorder the actual HTML elements to match the alphabetical sort
+cards.forEach(card => grid.appendChild(card));
   let currentPage = 0;
 
   const totalPages = Math.max(1, Math.ceil(cards.length / pageSize));
@@ -46,4 +58,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showPage(0);
 });
-</script>
+
