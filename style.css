@@ -886,3 +886,218 @@ a {
   }
 
 }
+
+/* ==============================================
+   CLUB INFORMATION NOTECARD
+   ============================================== */
+
+.club-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  padding: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.club-modal.is-open {
+  display: flex;
+}
+
+.club-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 20, 30, 0.76);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: clubBackdropIn 0.2s ease;
+}
+
+.club-notecard {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.15fr);
+  width: min(900px, 100%);
+  max-height: min(700px, calc(100dvh - 48px));
+  overflow-y: auto;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+  border-radius: 18px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  animation: clubCardIn 0.3s ease both;
+}
+
+/* Large club image */
+.club-notecard-image-wrap {
+  min-height: 100%;
+  background: #f1f1f1;
+  overflow: hidden;
+}
+
+.club-notecard-image-wrap img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+/* Information panel */
+.club-notecard-content {
+  padding: 42px 36px 36px;
+  overflow-wrap: anywhere;
+}
+
+.club-notecard-label {
+  margin-bottom: 10px;
+  font-family: var(--font-h1);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+}
+
+.club-notecard-content h2 {
+  margin-bottom: 26px;
+  padding-right: 12px;
+  font-family: var(--font-h2);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  color: var(--color-primary);
+}
+
+.club-info-item {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e7e7e7;
+}
+
+.club-info-item h3 {
+  margin-bottom: 5px;
+  font-family: var(--font-h1);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #252525;
+}
+
+.club-info-item p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-neutral);
+}
+
+/* Close button */
+.club-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background: #fff;
+  color: #222;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.club-modal-close:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.club-modal-close:focus-visible {
+  outline: 3px solid var(--color-accent-2);
+  outline-offset: 3px;
+}
+
+/* Clickable club cards */
+.club-card {
+  cursor: pointer;
+}
+
+.club-card:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* Animations */
+@keyframes clubBackdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes clubCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Tablet and mobile */
+@media (max-width: 700px) {
+  .club-modal {
+    padding: 12px;
+  }
+
+  .club-notecard {
+    grid-template-columns: 1fr;
+    width: min(500px, 100%);
+    max-height: calc(100dvh - 24px);
+  }
+
+  .club-notecard-image-wrap {
+    height: 190px;
+    min-height: 0;
+  }
+
+  .club-notecard-image-wrap img {
+    height: 190px;
+    min-height: 0;
+    object-position: center;
+  }
+
+  .club-notecard-content {
+    padding: 26px 24px;
+  }
+
+  .club-notecard-content h2 {
+    padding-right: 30px;
+    margin-bottom: 18px;
+  }
+
+  .club-info-item {
+    margin-top: 14px;
+    padding-top: 12px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .club-modal-backdrop,
+  .club-notecard {
+    animation: none;
+  }
+
+  .club-modal-close {
+    transition: none;
+  }
+}
+
