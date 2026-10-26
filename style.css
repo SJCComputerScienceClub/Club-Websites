@@ -235,11 +235,93 @@ a {
   margin-bottom: var(--spacing-xl);
 }
 
+
 .club-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--spacing-lg);
 }
+
+/* Keep hidden cards out of the grid */
+.club-card[hidden] {
+  display: none !important;
+}
+
+/* Pagination controls */
+.club-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+#clubs-page-status {
+  font-family: var(--font-body);
+  color: var(--color-neutral);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.page-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+  background: var(--color-primary);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition),
+              transform var(--transition);
+}
+
+.page-arrow:hover:not(:disabled) {
+  background: #a8002a;
+  transform: translateY(-2px);
+}
+
+.page-arrow:focus-visible {
+  outline: 3px solid var(--color-accent-1);
+  outline-offset: 3px;
+}
+
+.page-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .club-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .club-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .club-pagination {
+    gap: 12px;
+  }
+
+  .page-arrow {
+    padding: 9px 12px;
+    font-size: 0.9rem;
+  }
+
+  #clubs-page-status {
+    font-size: 0.85rem;
+  }
+}
+
 
 /* --- Club Card --- */
 .club-card {
