@@ -78,7 +78,14 @@
           </a>
           ========================================== -->
 
-          <a href="https://litmag.sjcclubs.org" class="club-card">
+          <a href="https://litmag.sjcclubs.org"
+             class="club-card"
+             data-purpose="info"
+             data-meeting="info"
+             data-location="info"
+             data-moderator="info"
+             data-website="https://litmag.sjcclubs.org">
+            
             <div class="club-card-img-wrap">
               <img src="/images/clubs/litmag.avif" alt="Literary Magazine" class="club-card-img" />
             </div>
@@ -125,6 +132,37 @@
             </div>
           </a>
 
+           <a href="" class="club-card">
+            <div class="club-card-img-wrap">
+              <img src="/images/clubs/" alt="African Student Association" class="club-card-img" />
+            </div>
+            <div class="club-card-body">
+              <h3 class="club-card-name">African Student Association</h3>
+            </div>
+          </a>
+
+
+
+           <a href="" class="club-card">
+            <div class="club-card-img-wrap">
+              <img src="/images/clubs/" alt="Club" class="club-card-img" />
+            </div>
+            <div class="club-card-body">
+              <h3 class="club-card-name">Club</h3>
+            </div>
+          </a>
+
+
+
+           <a href="" class="club-card">
+            <div class="club-card-img-wrap">
+              <img src="/images/clubs/" alt="Club" class="club-card-img" />
+            </div>
+            <div class="club-card-body">
+              <h3 class="club-card-name">Club</h3>
+            </div>
+          </a>
+
           <!-- END CLUB CARDS — add new clubs above this line -->
 
         </div>
@@ -145,6 +183,59 @@
           Next &#8594;
         </button>
       </nav>
+      
+      <!-- CLUB INFORMATION NOTECARD -->
+      <div id="club-modal"
+           class="club-modal"
+           aria-hidden="true"
+           inert>
+      
+        <div class="club-modal-backdrop" data-close-modal></div>
+      
+        <section class="club-notecard"
+                 role="dialog"
+                 aria-modal="true"
+                 aria-labelledby="modal-club-name"
+                 aria-describedby="modal-club-purpose">
+      
+          <button type="button"
+                  class="club-modal-close"
+                  aria-label="Close club information"
+                  data-close-modal>
+            &times;
+          </button>
+      
+          <div class="club-notecard-image-wrap">
+            <img id="modal-club-image" src="" alt="" />
+          </div>
+      
+          <div class="club-notecard-content">
+            <p class="club-notecard-label">DISCOVER YOUR COMMUNITY</p>
+      
+            <h2 id="modal-club-name"></h2>
+      
+            <div class="club-info-item" id="purpose-item">
+              <h3>About the Club</h3>
+              <p id="modal-club-purpose"></p>
+            </div>
+      
+            <div class="club-info-item" id="meeting-item">
+              <h3>Meeting Schedule</h3>
+              <p id="modal-club-meeting"></p>
+            </div>
+      
+            <div class="club-info-item" id="location-item">
+              <h3>Meeting Location</h3>
+              <p id="modal-club-location"></p>
+            </div>
+      
+            <div class="club-info-item" id="moderator-item">
+              <h3>Faculty Moderator</h3>
+              <p id="modal-club-moderator"></p>
+            </div>
+          </div>
+        </section>
+      </div>
 
       </div>
     </section>
