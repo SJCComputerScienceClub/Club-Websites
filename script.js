@@ -1,4 +1,4 @@
-
+/*
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".club-grid");
   const previousButton = document.getElementById("clubs-prev");
@@ -58,7 +58,91 @@ cards.forEach(card => grid.appendChild(card));
 
   showPage(0);
 });
+*/
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.querySelector(".club-grid");
+  const previousButton = document.getElementById("clubs-prev");
+  const nextButton = document.getElementById("clubs-next");
+  const pageStatus = document.getElementById("clubs-page-status");
+  const searchInput = document.getElementById("club-search-input");
+  const searchResults = document.getElementById("club-search-results");
+
+  if (!grid || !previousButton || !nextButton || !pageStatus) return;
+
+  const cards = Array.from(grid.querySelectorAll(".club-card"))
+    .sort((a, b) => {
+      const nameA = a.querySelector("h2, h3, h4")?.textContent.trim() || "";
+      const nameB = b.querySelector("h2, h3, h4")?.textContent.trim() || "";
+
+      return nameA.localeCompare(nameB, "en", {
+        sensitivity: "base",
+        numeric: true
+      });
+    });
+
+  const pageSize = 9;
+  let currentPage = 0;
+  let filteredCards = [...cards];
+
+  cards.forEach(card => grid.appendChild(card));
+
+  function showPage(page) {
+    const totalPages = Math.max(
+      1,
+      Math.ceil(filteredCards.length / pageSize)
+    );
+
+    currentPage = Math.max(0, Math.min(page, totalPages - 1));
+
+    cards.forEach(card => {
+      card.hidden = !filteredCards.includes(card) ||
+        filteredCards.indexOf(card) < currentPage * pageSize ||
+        filteredCards.indexOf(card) >= (currentPage + 1) * pageSize;
+    });
+
+    previousButton.disabled = currentPage === 0;
+    nextButton.disabled = currentPage === totalPages - 1;
+
+    pageStatus.textContent = filteredCards.length
+      ? `Page ${currentPage + 1} of ${totalPages} · ${filteredCards.length} clubs`
+      : "No clubs found";
+
+    if (searchResults) {
+      searchResults.textContent = filteredCards.length
+        ? `Showing ${filteredCards.length} club${filteredCards.length === 1 ? "" : "s"}`
+        : "No clubs match your search. Try another name.";
+    }
+  }
+
+  function searchClubs() {
+    const query = searchInput.value.trim().toLowerCase();
+
+    filteredCards = cards.filter(card => {
+      const name = card.querySelector(".club-card-name")
+        ?.textContent.trim().toLowerCase() || "";
+
+      return name.includes(query);
+    });
+
+    showPage(0);
+  }
+
+  previousButton.addEventListener("click", () => {
+    showPage(currentPage - 1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    showPage(currentPage + 1);
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", searchClubs);
+  }
+
+  showPage(0);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("club-modal");
