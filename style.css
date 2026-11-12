@@ -1129,5 +1129,39 @@ a {
 .club-website-button[hidden] {
   display: none !important;
 }
+/* Club Search */
+.club-search {
+  max-width: 500px;
+  margin-bottom: 32px;
+}
 
+.club-search label {
+  display: block;
+  font-family: var(--font-h1);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.club-search input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font: inherit;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.club-search input:focus {
+  outline: 3px solid var(--color-accent-1);
+  border-color: var(--color-primary);
+}
+
+#club-search-results {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--color-neutral);
+}
 
